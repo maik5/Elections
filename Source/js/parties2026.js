@@ -80,6 +80,18 @@ var getParties = function () {
         bluewhite,
     ];
 
+    likud.group = 'ימין';
+    utj.group = 'ימין';
+    otzma.group = 'ימין';
+    shas.group = 'ימין';
+    zionism.group = 'ימין';
+    yashar.group = 'שמאל';
+    together.group = 'שמאל';
+    beytenu.group = 'שמאל';
+    democrats.group = 'שמאל';
+    joint.group = 'ערבים';
+    raam.group = 'ערבים';
+
     var partyConnections = [
         new partyConnection(together, beytenu),
         new partyConnection(joint, raam),

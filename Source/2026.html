@@ -4,10 +4,29 @@
     <title></title>
     <script src="Scripts/jquery-2.1.1.js"></script>
     <script src="Scripts/angular.js"></script>
-    <script src="js/parties2026.js?ver=63"></script>
+    <script src="js/parties2026.js?ver=64"></script>
     <script src="js/controllers.js?ver=10"></script>
+    <script>
+      // Sum of total mandates for the parties tagged with a group in parties2026.js
+      electionsApp.run(function ($rootScope) {
+          $rootScope.groupMandates = function (parties, group) {
+              var sum = 0;
+              (parties || []).forEach(function (p) { if (p.group == group) sum += p.totalMandates(); });
+              return sum;
+          };
+      });
+    </script>
     <link rel="stylesheet" href="Content/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="Content/elections.css?ver=2" type="text/css" />
+    <style>
+      .groups { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+      .group-box { flex: 1 1 160px; background: white; box-shadow: 0 0 12px 1px rgba(0,0,0,0.1); border-top: 5px solid; padding: 12px 16px; text-align: center; }
+      .group-box .group-name { font-size: 20px; font-weight: bold; }
+      .group-box .group-mandates { display: block; font-size: 40px; font-weight: bold; font-style: normal; line-height: 1.2; }
+      .group-right { border-top-color: #1f5fbf; }
+      .group-left { border-top-color: #c0392b; }
+      .group-arab { border-top-color: #27ae60; }
+    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148206002-1"></script>
     <script>
@@ -19,6 +38,23 @@
     </script>
 </head>
 <body ng-controller="ElectionsCtrl">
+    <div class="groups">
+        <div class="group-box group-right">
+            <div class="group-name">ימין</div>
+            <span class="group-mandates">{{groupMandates(parties, 'ימין')}}</span>
+            <div>מנדטים</div>
+        </div>
+        <div class="group-box group-left">
+            <div class="group-name">שמאל</div>
+            <span class="group-mandates">{{groupMandates(parties, 'שמאל')}}</span>
+            <div>מנדטים</div>
+        </div>
+        <div class="group-box group-arab">
+            <div class="group-name">ערבים</div>
+            <span class="group-mandates">{{groupMandates(parties, 'ערבים')}}</span>
+            <div>מנדטים</div>
+        </div>
+    </div>
     <a href="https://votes26.bechirot.gov.il/" target="_blank">תוצאות אמת באתר ועדת הבחירות</a>
     <br>
     תוצאות סופיות נכון ל- 28/10/2026 07:26
