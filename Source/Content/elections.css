@@ -1,0 +1,44 @@
+﻿body
+{
+    direction: rtl;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 1280px;
+    margin: 3rem auto;
+    background-color: #f1f1f1;
+}
+
+span {
+    font-style: italic
+}
+
+td, th
+{
+    width: 130px;
+    padding: 5px;
+}
+
+td{
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+th{
+    text-align: center;
+}
+
+.votes {
+    width: 75px;
+}
+
+.glyphicon-minus, .glyphicon-plus {
+    cursor: pointer;
+}
+
+table {
+    background-color: white;
+    box-shadow: 0 0 12px 1px rgba(0,0,0,0.1);
+}
+
+input {
+    font-size: 12px !important;
+}
