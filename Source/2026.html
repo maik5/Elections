@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="electionsApp">
 <head>
-    <title></title>
+    <title>תוצאות הבחירות לכנסת ה-26</title>
     <script src="Scripts/jquery-2.1.1.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="js/parties2026.js?ver=202610280757"></script>
@@ -26,6 +26,7 @@
       .group-right { border-top-color: #1f5fbf; }
       .group-left { border-top-color: #c0392b; }
       .group-arab { border-top-color: #27ae60; }
+      .page-title { text-align: center; font-weight: bold; margin: 0 0 24px; }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148206002-1"></script>
@@ -38,6 +39,7 @@
     </script>
 </head>
 <body ng-controller="ElectionsCtrl">
+    <h1 class="page-title">תוצאות הבחירות לכנסת ה-26</h1>
     <div class="groups">
         <div class="group-box group-right">
             <div class="group-name">ימין</div>
