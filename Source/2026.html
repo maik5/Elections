@@ -5,7 +5,7 @@
     <script src="Scripts/jquery-2.1.1.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="js/parties2026.js?ver=64"></script>
-    <script src="js/controllers.js?ver=10"></script>
+    <script src="js/controllers.js?ver=11"></script>
     <script>
       // Sum of total mandates for the parties tagged with a group in parties2026.js
       electionsApp.run(function ($rootScope) {
@@ -67,6 +67,9 @@
     <br />
     <label>קולות מעל אחוז החסימה:</label>
     <span>{{calcResults.totalVotesAboveBlock}}</span>
+    <br />
+    <label>קולות מתחת אחוז החסימה:</label>
+    <span>{{calcResults.totalVotesBelowBlock}}</span>
     <br />
     <label>מודד כללי:</label>
     <span>{{calcResults.generalMeasure}}</span>
